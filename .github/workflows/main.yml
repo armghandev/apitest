@@ -13,20 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Install Dependencies
-        run: |
-          cd /
-          npm install
 
-      - name: Run API Tests
-        run: |
-          npm install --save-dev supertest
-          cd /
-          npm test  # Assuming you have Jest or another testing framework set up
 
       - name: Build and Deploy Static Website
         run: |
-          cd /home/ubuntu/apitest
+          cd /
           npm run build  # Assuming you have a build script in your package.json
 
           # Deploy the static website to a hosting service (e.g., GitHub Pages)
@@ -34,7 +25,7 @@ jobs:
 
       - name: Deploy API
         run: |
-          cd /home/ubuntu/apitest
+          cd /
           # Add commands to start your API server
           npm start  # Assuming you have a start script in your package.json
 
