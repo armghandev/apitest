@@ -15,13 +15,13 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd /home/ubuntu/apitest
+          cd /
           npm install
 
       - name: Run API Tests
         run: |
           npm install --save-dev supertest
-          cd /home/ubuntu/apitest
+          cd /
           npm test  # Assuming you have Jest or another testing framework set up
 
       - name: Build and Deploy Static Website
